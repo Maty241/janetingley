@@ -16,8 +16,6 @@
 
 html,body
 {
-    width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
@@ -27,6 +25,12 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
+}
+
+p{
+    margin-bottom: 20px;
+    line-height: 25px;
+    color: #9a9a9a;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -62,17 +66,6 @@ a:hover{
     padding-top: 40px;
     padding-bottom: 40px;
     margin-top: 40px;
-}
-
-.go-top-bar{
-    width: 100%;
-    padding-top: 20px;
-}
-
-.go-top{
-    width: 44px;
-    margin: auto;
-    text-align: middle;
 }
 
 .go-top>a>span{
@@ -118,6 +111,12 @@ a:hover{
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#wrapper.toggled #page-content-wrapper * {
+    pointer-events: none;
 }
 
 .project-thumbs{
@@ -175,10 +174,14 @@ a:hover{
     margin: auto;
     bottom: 0px;
     position: absolute;
-    padding: 40px;
+    padding: 20px;
 }
 
-.project-thumbs-hover:hover {
+.project-thumbs-hover div p{
+	margin-bottom: 0;
+}
+
+.project-thumbs-hover:hover, project-thumbs-hover:active, project-thumbs-hover:focus {
     opacity: 1;
 }
 
@@ -233,6 +236,14 @@ a:hover{
 
 .active{
     border-bottom: 2px solid #2a7ed2 !important;
+}
+
+.scroll-top{
+    position: static;
+}
+
+.go-top{
+    text-align: center;
 }
 
 /* Sidebar Styles */
@@ -317,8 +328,8 @@ a:hover{
 
     #page-content-wrapper {
         padding: 30px;
-        padding-right: 60px;
         position: relative;
+        max-width: 900px;
     }
 
     #wrapper.toggled #page-content-wrapper {
@@ -332,6 +343,11 @@ a:hover{
 
     .info{
         display: inline;
+    }
+    
+    .page-title{
+        margin-top: 7px;
+        margin-bottom: 5px;
     }
 }
 
@@ -350,6 +366,32 @@ a:hover{
 @media(max-width: 1200px) and (min-width: 992px){
     .project-thumbs-hover>div{
         padding: 10px;
+    }
+}
+
+@media(min-width:1480px) {
+        
+    .go-top-bar{
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .go-top{
+        width: 44px;
+        margin: auto;
+        text-align: middle;
+    }
+    
+    .scroll-top{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 40px;
+        display: none;
+    }
+    
+    .go-top{
+        text-align:inherit;
     }
 }
 
